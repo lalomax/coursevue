@@ -17,6 +17,11 @@
                 return {
                     message: 'Hello Vue!'
                 }
+            },
+            mounted() {
+                setTimeout(() => {
+                    this.message = 'Hello World!'
+                }, 3000)
             }
         })
         app.mount('#app')
