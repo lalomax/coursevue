@@ -13,11 +13,17 @@
             display : grid;
             place-items: center;
         }
+        .text-red {
+            color: red;
+        }
+        .text-green {
+            color: green;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <button v-on:click="count++">You clicked me {{ count }} times.</button>
+        <button class="text-green" v-on:click="count++">You clicked me {{ count }} times.</button>
     </div>
     <script>
         const app = Vue.createApp({
