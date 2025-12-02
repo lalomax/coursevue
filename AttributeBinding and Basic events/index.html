@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body {
+            height: 100vh;
+        }
+        body {
+            display : grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="count++">You clicked me {{ count }} times.</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
