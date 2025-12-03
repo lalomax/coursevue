@@ -12,7 +12,7 @@
         <h2 class="text-2xl font-bold">Assignments</h2>
         <ul>
             <li v-for="assignment in assignments" :key="assignment.name"> 
-                {{ assignment.name }} <input type="checkbox" v-model="assignment.completed">
+                <label><input type="checkbox" v-model="assignment.completed"> {{ assignment.name }}</label>
             </li>
         </ul>
     </div>
