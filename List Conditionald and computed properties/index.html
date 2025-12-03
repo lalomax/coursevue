@@ -15,6 +15,9 @@
                 <label><input type="checkbox" v-model="assignment.completed"> {{ assignment.name }}</label>
             </li>
         </ul>
+        <pre>
+            {{assignments}}
+        </pre>
     </div>
     <script>
         const app = Vue.createApp({
