@@ -9,22 +9,29 @@
 </head>
 <body class="h-full flex items-center justify-center">
     <div id="app">
-        <h2 class="text-2xl font-bold">Assignments</h2>
-        <ul>
-            <li v-for="assignment in assignments" :key="assignment.name"> 
-                <label><input type="checkbox" v-model="assignment.completed"> {{ assignment.name }}</label>
-            </li>
-        </ul>
-        <pre>
-            {{assignments}}
-        </pre>
+        <section>
+            <h2 class="text-2xl font-bold">Assignments</h2>
+            <ul>
+                <li v-for="assignment in assignments.filter(a => !a.completed)" :key="assignment.name">
+                    <label><input type="checkbox" v-model="assignment.completed"> {{ assignment.name }}</label>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="text-2xl font-bold mt-8">Completed</h2>
+            <ul>
+                <li v-for="assignment in assignments.filter(a => a.completed)" :key="assignment.name">
+                    <label><input type="checkbox" v-model="assignment.completed"> {{ assignment.name }}</label>
+                </li>
+            </ul>
+        </section>
     </div>
     <script>
         const app = Vue.createApp({
             data() {
                 return {
                     assignments: [
-                        { name: 'Assignment 1', completed: true },
+                        { name: 'Assignment 1', completed: false },
                         { name: 'Assignment 2', completed: false },
                         { name: 'Assignment 3', completed: false }
                     ]
