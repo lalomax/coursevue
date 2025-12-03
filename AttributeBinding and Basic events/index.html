@@ -23,14 +23,22 @@
 </head>
 <body>
     <div id="app">
-        <button v-bind:class="buttonClasses" v-on:click="count++">You clicked me {{ count }} times.</button>
+        <button :class="active ? 'text-red' : 'text-green'" @click="toggleActive">You clicked me {{ count }} times.</button>
     </div>
     <script>
         const app = Vue.createApp({
             data() {
                 return {
                     count: 0,
-                    buttonClasses: "text-green"
+                    active: false
+                }
+            },
+            methods: {
+                toggleActive() {
+                    this.active = !this.active
+                },
+                increment() {
+                    this.count++
                 }
             }
         })
