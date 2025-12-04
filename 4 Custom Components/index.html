@@ -9,14 +9,22 @@
 </head>
 <body class="h-full flex items-center justify-center">
     <div id="app">
-        <app-button></app-button>
+        <app-button>My button</app-button>
+        <app-button>Another button</app-button>
     </div>
     <script>
         let app = {
             components:{
                 'app-button':{
-                    mounted() {
-                        alert ("Hello Orlando! I'm a Vue custom component")
+                    template : `
+                    <button class="bg-gray-400 hover:bg-gray-200 px-2 py-4 disabled:cursor-not-allowed" :disabled="processing">
+                        <slot>
+                    </button>
+                    `
+                },
+                data() {
+                    return {
+                        processing: true
                     }
                 }
             }
